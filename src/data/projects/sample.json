@@ -1,0 +1,51 @@
+[
+  {
+    "id": "cavitewisdom",
+    "title": "CaviteWisdom",
+    "short": "Weekly community newspaper with PDF reading/upload",
+    "description": "A weekly news site with PDF archives and reader.",
+    "pdf": null,
+    "live": "https://www.cavite-wisdom.com",
+    "thumbnail": "https://www.cavite-wisdom.com/newspapers/thumbnails/VOL.%207%20NO.%2051.jpg",
+    "images": [
+      "https://www.cavite-wisdom.com/newspapers/thumbnails/VOL.%207%20NO.%2051.jpg",
+      "https://www.cavite-wisdom.com/newspapers/thumbnails/VOL.%207%20NO.%2050.jpg"
+    ],
+    "repo": "https://github.com/yourname/cavitewisdom"
+  },
+  {
+    "id": "eyewatch",
+    "title": "Eyewatch",
+    "short": "Weekly news updates and uploads",
+    "description": "Local news site focused on community updates.",
+    "pdf": null,
+    "live": "https://eyewatchnews.com",
+    "thumbnail": "https://eyewatchnews.com/newspapers/thumbs/vol-7-no-49-2026-01-19.svg",
+    "images": [
+      "https://eyewatchnews.com/newspapers/thumbs/vol-7-no-49-2026-01-19.svg",
+      "https://eyewatchnews.com/newspapers/thumbs/vol-7-no-48-2026-01-12.svg"
+    ],
+    "repo": "https://github.com/yourname/eyewatch"
+  },
+  {
+    "id": "familytree",
+    "title": "FamilyTree",
+    "short": "Family tree browser and editor",
+    "description": "A small app to visualize and manage family trees.",
+    "repo": "https://github.com/yourname/familytree"
+  },
+  {
+    "id": "lkprint",
+    "title": "LK Print",
+    "short": "Printing service showcase",
+    "description": "Displays printing services and pricing.",
+    "repo": "https://github.com/yourname/lkprint"
+  },
+  {
+    "id": "photoprint",
+    "title": "PhotoPrint",
+    "short": "Photo layout & customization app",
+    "description": "Tool for arranging photos and layouts for print.",
+    "repo": "https://github.com/yourname/photoprint"
+  }
+]
