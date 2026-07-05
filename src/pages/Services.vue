@@ -1,5 +1,5 @@
 <template>
-  <section class="services-page">
+  <section class="services-page services-page-enhanced">
     <h2 class="text-2xl font-semibold mb-4">Services</h2>
 
     <p class="services-intro">
