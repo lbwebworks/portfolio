@@ -6,10 +6,9 @@
     "description": "A weekly news site with PDF archives and reader.",
     "pdf": null,
     "live": "https://www.cavite-wisdom.com",
-    "thumbnail": "https://www.cavite-wisdom.com/newspapers/thumbnails/VOL.%207%20NO.%2051.jpg",
+    "thumbnail": "/banners/wisdom.PNG",
     "images": [
-      "https://www.cavite-wisdom.com/newspapers/thumbnails/VOL.%207%20NO.%2051.jpg",
-      "https://www.cavite-wisdom.com/newspapers/thumbnails/VOL.%207%20NO.%2050.jpg"
+      "/banners/wisdom.PNG"
     ],
     "repo": "https://github.com/yourname/cavitewisdom"
   },
@@ -20,10 +19,9 @@
     "description": "Local news site focused on community updates.",
     "pdf": null,
     "live": "https://eyewatchnews.com",
-    "thumbnail": "https://eyewatchnews.com/newspapers/thumbs/vol-7-no-49-2026-01-19.svg",
+    "thumbnail": "/banners/eyewatch.PNG",
     "images": [
-      "https://eyewatchnews.com/newspapers/thumbs/vol-7-no-49-2026-01-19.svg",
-      "https://eyewatchnews.com/newspapers/thumbs/vol-7-no-48-2026-01-12.svg"
+      "/banners/eyewatch.PNG"
     ],
     "repo": "https://github.com/yourname/eyewatch"
   },
@@ -32,6 +30,10 @@
     "title": "FamilyTree",
     "short": "Family tree browser and editor",
     "description": "A small app to visualize and manage family trees.",
+    "thumbnail": "/banners/familytree.PNG",
+    "images": [
+      "/banners/familytree.PNG"
+    ],
     "repo": "https://github.com/yourname/familytree"
   },
   {
@@ -39,6 +41,10 @@
     "title": "LK Print",
     "short": "Printing service showcase",
     "description": "Displays printing services and pricing.",
+    "thumbnail": "/banners/lkprint.PNG",
+    "images": [
+      "/banners/lkprint.PNG"
+    ],
     "repo": "https://github.com/yourname/lkprint"
   },
   {
@@ -46,6 +52,10 @@
     "title": "PhotoPrint",
     "short": "Photo layout & customization app",
     "description": "Tool for arranging photos and layouts for print.",
+    "thumbnail": "/banners/photoprint.PNG",
+    "images": [
+      "/banners/photoprint.PNG"
+    ],
     "repo": "https://github.com/yourname/photoprint"
   }
 ]

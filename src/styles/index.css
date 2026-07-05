@@ -57,3 +57,17 @@ html, body, #app { height: 100%; margin: 0; font-family: Inter, system-ui, -appl
 .nav-links a{ margin-left: 0.75rem; color: var(--accent); text-decoration: none }
 .nav-links a:hover{ text-decoration: underline }
 
+/* Projects: keep cards in one horizontal row */
+.projects-row {
+	display: flex;
+	gap: 1rem;
+	overflow-x: auto;
+	padding-bottom: 0.25rem;
+	scroll-snap-type: x proximity;
+}
+
+.projects-row > * {
+	flex: 0 0 min(22rem, 85vw);
+	scroll-snap-align: start;
+}
+
