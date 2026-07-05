@@ -53,21 +53,170 @@ html, body, #app { height: 100%; margin: 0; font-family: Inter, system-ui, -appl
 
 .btn { display:inline-block; padding: .5rem 1rem; background:var(--text); color:var(--panel); border-radius:.375rem; text-decoration:none }
 
-/* Utility spacing for header links */
-.nav-links a{ margin-left: 0.75rem; color: var(--accent); text-decoration: none }
-.nav-links a:hover{ text-decoration: underline }
-
-/* Projects: keep cards in one horizontal row */
-.projects-row {
-	display: flex;
-	gap: 1rem;
-	overflow-x: auto;
-	padding-bottom: 0.25rem;
-	scroll-snap-type: x proximity;
+/* Header: brand and folder-like navigation */
+.site-header {
+	border-bottom: 1px solid rgba(15, 23, 42, 0.14);
 }
 
-.projects-row > * {
-	flex: 0 0 min(22rem, 85vw);
-	scroll-snap-align: start;
+.site-brand {
+	font-size: 1.65rem;
+	font-weight: 800;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+	color: var(--accent);
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+.nav-links {
+	display: flex;
+	align-items: flex-end;
+	gap: 0.25rem;
+}
+
+.nav-links a {
+	margin-left: 0;
+	color: var(--accent);
+	text-decoration: none;
+}
+
+.nav-tabs a {
+	display: inline-block;
+	padding: 0.5rem 0.8rem;
+	border: 1px solid rgba(15, 23, 42, 0.2);
+	border-bottom: 1px solid rgba(15, 23, 42, 0.22);
+	border-radius: 0.55rem 0.55rem 0 0;
+	background: rgba(241, 245, 249, 0.8);
+	font-weight: 600;
+	font-size: 0.92rem;
+	position: relative;
+	top: 1px;
+}
+
+.nav-tabs a:hover {
+	background: rgba(255, 255, 255, 0.95);
+}
+
+.nav-tabs a.router-link-active,
+.nav-tabs a.router-link-exact-active {
+	background: var(--bg);
+	color: var(--text);
+	border-bottom-color: var(--bg);
+	z-index: 2;
+}
+
+.nav-theme-toggle {
+	margin-left: 1rem;
+	background: rgba(37, 99, 235, 0.12);
+	border: 1px solid rgba(37, 99, 235, 0.24);
+	cursor: pointer;
+}
+
+.nav-theme-toggle:hover {
+	background: rgba(37, 99, 235, 0.2);
+}
+
+/* Projects: full-width themed rows with alternating layout */
+.projects-page {
+	display: grid;
+	gap: 0;
+}
+
+.projects-header {
+	max-width: 64rem;
+	margin: 0 auto;
+	width: 100%;
+	padding-bottom: 0.75rem;
+}
+
+.project-band {
+	background: var(--row-bg);
+	border-top: 1px solid rgba(15, 23, 42, 0.08);
+	border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+	width: 100vw;
+	margin-left: calc(50% - 50vw);
+	margin-right: calc(50% - 50vw);
+	padding: 2.5rem 0;
+}
+
+.project-band-inner {
+	max-width: 64rem;
+	margin: 0 auto;
+	padding: 0 1rem;
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 1.5rem;
+	align-items: center;
+}
+
+.project-copy h3 {
+	font-size: 1.8rem;
+	margin: 0 0 0.75rem;
+	color: var(--row-accent);
+}
+
+.project-copy p {
+	margin: 0;
+	line-height: 1.6;
+	font-size: 1.02rem;
+	color: #1f2937;
+}
+
+.project-actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.9rem;
+	margin-top: 1.15rem;
+}
+
+.project-actions a {
+	text-decoration: none;
+	color: #0f172a;
+	background: rgba(255, 255, 255, 0.8);
+	border: 1px solid rgba(15, 23, 42, 0.15);
+	border-radius: 9999px;
+	padding: 0.45rem 0.95rem;
+	font-size: 0.9rem;
+	font-weight: 600;
+}
+
+.project-actions a:hover {
+	background: #ffffff;
+}
+
+.project-media img,
+.project-media-fallback {
+	width: 100%;
+	height: 15rem;
+	border-radius: 0.75rem;
+	border: 1px solid rgba(15, 23, 42, 0.12);
+	box-shadow: 0 6px 18px rgba(15, 23, 42, 0.14);
+	background: #ffffff;
+}
+
+.project-media img {
+	object-fit: cover;
+}
+
+.project-media-fallback {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #64748b;
+	font-size: 0.95rem;
+}
+
+@media (min-width: 900px) {
+	.project-band-inner {
+		grid-template-columns: 1.05fr 1fr;
+		gap: 2.5rem;
+	}
+
+	.project-band-inner.is-reverse .project-copy {
+		order: 2;
+	}
+
+	.project-band-inner.is-reverse .project-media {
+		order: 1;
+	}
 }
 

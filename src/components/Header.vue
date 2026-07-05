@@ -1,15 +1,15 @@
 <template>
-  <header class="bg-white shadow-sm">
+  <header class="bg-white shadow-sm site-header">
     <div class="max-w-5xl mx-auto p-4 flex items-center justify-between">
-      <div class="font-bold">Portfolio</div>
+      <div class="site-brand">Portfolio</div>
       <div class="flex items-center">
-        <nav class="nav-links">
+        <nav class="nav-links nav-tabs">
           <router-link to="/">Home</router-link>
           <router-link to="/projects">Projects</router-link>
           <router-link to="/services">Services</router-link>
           <router-link to="/contact">Contact</router-link>
         </nav>
-        <button @click="toggleTheme" aria-label="Toggle theme" class="ml-4 p-2 rounded-full" title="Toggle theme">
+        <button @click="toggleTheme" aria-label="Toggle theme" class="nav-theme-toggle p-2 rounded-full" title="Toggle theme">
           <span v-if="theme==='dark'">🌙</span>
           <span v-else>☀️</span>
         </button>
