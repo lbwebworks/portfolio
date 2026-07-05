@@ -60,11 +60,21 @@ html, body, #app { height: 100%; margin: 0; font-family: Inter, system-ui, -appl
 
 .app-main {
 	flex: 1;
+	display: flex;
+}
+
+.app-main > * {
+	width: 100%;
 }
 
 /* Header: brand and folder-like navigation */
 .site-header {
 	border-bottom: 1px solid rgba(15, 23, 42, 0.14);
+}
+
+.site-header-inner {
+	padding: 0.9rem 1rem 0;
+	align-items: flex-end;
 }
 
 .site-brand {
@@ -79,7 +89,7 @@ html, body, #app { height: 100%; margin: 0; font-family: Inter, system-ui, -appl
 .nav-links {
 	display: flex;
 	align-items: flex-end;
-	gap: 0.25rem;
+	gap: 0.1rem;
 }
 
 .nav-links a {
@@ -90,15 +100,15 @@ html, body, #app { height: 100%; margin: 0; font-family: Inter, system-ui, -appl
 
 .nav-tabs a {
 	display: inline-block;
-	padding: 0.5rem 0.8rem;
+	padding: 0.72rem 1.15rem;
 	border: 1px solid rgba(15, 23, 42, 0.2);
-	border-bottom: 1px solid rgba(15, 23, 42, 0.22);
-	border-radius: 0.55rem 0.55rem 0 0;
-	background: rgba(241, 245, 249, 0.8);
+	border-bottom: 1px solid transparent;
+	border-radius: 0.75rem 0.75rem 0 0;
+	background: var(--panel);
 	font-weight: 600;
-	font-size: 0.92rem;
+	font-size: 0.98rem;
 	position: relative;
-	top: 1px;
+	top: 0;
 }
 
 .nav-tabs a:hover {
@@ -110,6 +120,8 @@ html, body, #app { height: 100%; margin: 0; font-family: Inter, system-ui, -appl
 	background: var(--bg);
 	color: var(--text);
 	border-bottom-color: var(--bg);
+	margin-bottom: -1px;
+	box-shadow: 0 1px 0 var(--bg);
 	z-index: 2;
 }
 
@@ -122,6 +134,118 @@ html, body, #app { height: 100%; margin: 0; font-family: Inter, system-ui, -appl
 
 .nav-theme-toggle:hover {
 	background: rgba(37, 99, 235, 0.2);
+}
+
+[data-theme="dark"] .site-header {
+	border-bottom-color: rgba(148, 163, 184, 0.35);
+}
+
+[data-theme="dark"] .nav-tabs a {
+	background: var(--panel);
+	color: #bfdbfe;
+	border-color: rgba(148, 163, 184, 0.35);
+}
+
+[data-theme="dark"] .nav-tabs a:hover {
+	background: rgba(30, 41, 59, 0.95);
+}
+
+[data-theme="dark"] .nav-tabs a.router-link-active,
+[data-theme="dark"] .nav-tabs a.router-link-exact-active {
+	background: var(--bg);
+	color: var(--text);
+	border-bottom-color: var(--bg);
+}
+
+[data-theme="dark"] .nav-theme-toggle {
+	background: rgba(96, 165, 250, 0.16);
+	border-color: rgba(96, 165, 250, 0.35);
+}
+
+/* Home page banners */
+.home-page {
+	display: grid;
+	gap: 1rem;
+	min-height: 100%;
+	align-content: center;
+	padding: clamp(1rem, 3vh, 2.5rem) 0;
+}
+
+.home-title {
+	margin: 0;
+	font-size: 2rem;
+	line-height: 1.15;
+}
+
+.home-subtitle {
+	margin: 0;
+	line-height: 1.65;
+	max-width: 52rem;
+	color: var(--muted);
+}
+
+.home-banner-grid {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 0.9rem;
+	margin-top: 0.3rem;
+}
+
+.home-banner {
+	text-decoration: none;
+	border-radius: 0.9rem;
+	padding: 1.2rem;
+	color: #f8fafc;
+	display: block;
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	box-shadow: 0 10px 24px rgba(15, 23, 42, 0.16);
+	transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+.home-banner h2 {
+	margin: 0.2rem 0 0.35rem;
+	font-size: 1.45rem;
+}
+
+.home-banner p {
+	margin: 0;
+	line-height: 1.5;
+}
+
+.home-banner-kicker {
+	font-size: 0.76rem;
+	letter-spacing: 0.11em;
+	text-transform: uppercase;
+	font-weight: 700;
+	color: rgba(255, 255, 255, 0.82);
+}
+
+.home-banner-projects {
+	background: linear-gradient(135deg, #2563eb 0%, #0f172a 100%);
+}
+
+.home-banner-services {
+	background: linear-gradient(135deg, #047857 0%, #0f766e 55%, #083344 100%);
+}
+
+.home-banner:hover {
+	transform: translateY(-3px) scale(1.01);
+	box-shadow: 0 16px 32px rgba(15, 23, 42, 0.25);
+	filter: saturate(1.08);
+}
+
+.home-banner-projects:hover {
+	background: linear-gradient(135deg, #3b82f6 0%, #1e293b 100%);
+}
+
+.home-banner-services:hover {
+	background: linear-gradient(135deg, #059669 0%, #0f766e 52%, #155e75 100%);
+}
+
+@media (min-width: 900px) {
+	.home-banner-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
 }
 
 /* Projects: full-width themed rows with alternating layout */
@@ -182,9 +306,6 @@ html, body, #app { height: 100%; margin: 0; font-family: Inter, system-ui, -appl
 	border-top: 1px solid rgba(15, 23, 42, 0.12);
 	background: var(--panel);
 	margin-top: auto;
-	position: sticky;
-	bottom: 0;
-	z-index: 10;
 }
 
 .site-footer-inner {

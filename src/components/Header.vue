@@ -1,6 +1,6 @@
 <template>
   <header class="bg-white shadow-sm site-header">
-    <div class="max-w-5xl mx-auto p-4 flex items-center justify-between">
+    <div class="max-w-5xl mx-auto p-4 flex items-center justify-between site-header-inner">
       <div class="site-brand">Portfolio</div>
       <div class="flex items-center">
         <nav class="nav-links nav-tabs">
