@@ -31,7 +31,7 @@
         </div>
 
         <div class="project-media">
-          <img v-if="p.thumbnail" :src="p.thumbnail" :alt="`${p.title} banner`" />
+          <img v-if="p.thumbnail" :src="p.thumbnailSrc" :alt="`${p.title} banner`" />
           <div v-else class="project-media-fallback">No banner available</div>
         </div>
       </div>
@@ -42,6 +42,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import projects from '../data/projects/sample.json'
+import { resolveAssetUrl } from '../utils/assetUrl'
 
 const preferredOrder = ['photoprint', 'lkprint', 'familytree', 'eyewatch', 'cavitewisdom']
 
@@ -66,6 +67,7 @@ const orderedProjects = computed(() => {
 const themedProjects = computed(() => {
   return orderedProjects.value.map((project, index) => ({
     ...project,
+    thumbnailSrc: resolveAssetUrl(project.thumbnail),
     theme: rowThemes[index % rowThemes.length]
   }))
 })

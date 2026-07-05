@@ -3,7 +3,7 @@
     <div class="mb-3">
       <img
         v-if="project.thumbnail && showThumb"
-        :src="project.thumbnail"
+        :src="thumbnailSrc"
         :alt="project.title + ' thumbnail'"
         class="w-full h-36 object-cover rounded cursor-pointer"
         @error="showThumb = false"
@@ -35,12 +35,17 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
 import Lightbox from './Lightbox.vue'
+import { resolveAssetUrl } from '../utils/assetUrl'
 const props = defineProps<{ project: any }>()
 const project = props.project
 const showThumb = ref(true)
 const showLightbox = ref(false)
 const currentIndex = ref(0)
-const images = computed(() => project.images && project.images.length ? project.images : (project.thumbnail ? [project.thumbnail] : []))
+const thumbnailSrc = computed(() => resolveAssetUrl(project.thumbnail))
+const images = computed(() => {
+  const source = project.images && project.images.length ? project.images : (project.thumbnail ? [project.thumbnail] : [])
+  return source.map((img: string) => resolveAssetUrl(img))
+})
 
 const openAt = (i = 0) => {
   currentIndex.value = i

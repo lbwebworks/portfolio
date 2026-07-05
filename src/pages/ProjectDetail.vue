@@ -4,7 +4,7 @@
     <div v-if="(project?.thumbnail && showThumb) || (!project?.thumbnail && !showThumb)" class="mb-4">
       <img
         v-if="project?.thumbnail && showThumb"
-        :src="project.thumbnail"
+        :src="thumbnailSrc"
         :alt="project.title + ' thumbnail'"
         class="w-full max-h-96 object-contain rounded cursor-pointer"
         @error="showThumb = false"
@@ -33,11 +33,12 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
 import { useRoute } from 'vue-router'
 import projects from '../data/projects/sample.json'
 import PDFViewer from '../components/PDFViewer.vue'
 import Lightbox from '../components/Lightbox.vue'
+import { resolveAssetUrl } from '../utils/assetUrl'
 
 const route = useRoute()
 const id = route.params.id as string
@@ -45,7 +46,13 @@ const project = ref(projects.find((p: any) => p.id === id))
 const showThumb = ref(true)
 const showLightbox = ref(false)
 const currentIndex = ref(0)
-const images = computed(() => project.value?.images && project.value.images.length ? project.value.images : (project.value?.thumbnail ? [project.value.thumbnail] : []))
+const thumbnailSrc = computed(() => resolveAssetUrl(project.value?.thumbnail))
+const images = computed(() => {
+  const source = project.value?.images && project.value.images.length
+    ? project.value.images
+    : (project.value?.thumbnail ? [project.value.thumbnail] : [])
+  return source.map((img: string) => resolveAssetUrl(img))
+})
 
 const openAt = (i = 0) => {
   currentIndex.value = i
