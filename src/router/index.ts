@@ -7,7 +7,6 @@ import Contact from '../pages/Contact.vue'
 
 const routes = [
   { path: '/', name: 'Home', component: Home },
-  { path: '/home', redirect: '/' },
   { path: '/projects', name: 'Projects', component: Projects },
   { path: '/projects/:id', name: 'ProjectDetail', component: ProjectDetail },
   { path: '/services', name: 'Services', component: Services }
