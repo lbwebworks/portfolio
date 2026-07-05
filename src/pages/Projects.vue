@@ -1,14 +1,23 @@
 <template>
   <section class="projects-page">
-    <div class="projects-header">
-      <h2 class="text-2xl font-semibold">Projects</h2>
+    <div class="projects-intro-band">
+      <div class="projects-header">
+        <div class="projects-intro-banner">
+          <p class="projects-intro-kicker">Selected Work</p>
+          <h2>Built for real clients, timelines, and everyday users.</h2>
+          <p>
+            This portfolio highlights practical web projects across publishing, print, and family tools.
+            Each build focuses on clean UX, reliable delivery, and maintainable code.
+          </p>
+        </div>
+      </div>
     </div>
 
     <article
       v-for="(p, index) in themedProjects"
       :key="p.id"
       class="project-band"
-      :style="{ '--row-bg': p.theme.bg, '--row-accent': p.theme.accent }"
+      :style="{ '--row-bg': p.theme.bg, '--row-bg-end': p.theme.bgEnd, '--row-accent': p.theme.accent }"
     >
       <div class="project-band-inner" :class="{ 'is-reverse': index % 2 === 1 }">
         <div class="project-copy">
@@ -37,11 +46,11 @@ import projects from '../data/projects/sample.json'
 const preferredOrder = ['photoprint', 'lkprint', 'familytree', 'eyewatch', 'cavitewisdom']
 
 const rowThemes = [
-  { bg: '#ffe9d8', accent: '#b45309' },
-  { bg: '#e6f7ff', accent: '#0369a1' },
-  { bg: '#ecfdf3', accent: '#047857' },
-  { bg: '#f5f0ff', accent: '#6d28d9' },
-  { bg: '#fff1f2', accent: '#be123c' }
+  { bg: '#ffe9d8', bgEnd: '#ffd7b0', accent: '#b45309' },
+  { bg: '#e6f7ff', bgEnd: '#cdefff', accent: '#0369a1' },
+  { bg: '#ecfdf3', bgEnd: '#d6fbe8', accent: '#047857' },
+  { bg: '#f5f0ff', bgEnd: '#e8deff', accent: '#6d28d9' },
+  { bg: '#fff1f2', bgEnd: '#ffe0e6', accent: '#be123c' }
 ]
 
 const orderedProjects = computed(() => {

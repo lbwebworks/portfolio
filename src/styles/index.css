@@ -53,6 +53,15 @@ html, body, #app { height: 100%; margin: 0; font-family: Inter, system-ui, -appl
 
 .btn { display:inline-block; padding: .5rem 1rem; background:var(--text); color:var(--panel); border-radius:.375rem; text-decoration:none }
 
+.app-shell {
+	display: flex;
+	flex-direction: column;
+}
+
+.app-main {
+	flex: 1;
+}
+
 /* Header: brand and folder-like navigation */
 .site-header {
 	border-bottom: 1px solid rgba(15, 23, 42, 0.14);
@@ -121,15 +130,176 @@ html, body, #app { height: 100%; margin: 0; font-family: Inter, system-ui, -appl
 	gap: 0;
 }
 
+.projects-intro-band {
+	width: 100vw;
+	margin-left: calc(50% - 50vw);
+	margin-right: calc(50% - 50vw);
+	background: linear-gradient(135deg, #0f172a 0%, #1d4ed8 58%, #38bdf8 100%);
+	height: 550px;
+	display: flex;
+	align-items: center;
+}
+
 .projects-header {
 	max-width: 64rem;
 	margin: 0 auto;
 	width: 100%;
-	padding-bottom: 0.75rem;
+	padding: 0 1rem;
+}
+
+.projects-intro-banner {
+	background: transparent;
+	color: #f8fafc;
+	border-radius: 0.9rem;
+	padding: 1.4rem 1.25rem;
+	box-shadow: none;
+}
+
+.projects-intro-kicker {
+	margin: 0;
+	font-size: 0.78rem;
+	text-transform: uppercase;
+	letter-spacing: 0.12em;
+	font-weight: 700;
+	color: #bfdbfe;
+}
+
+.projects-intro-banner h2 {
+	margin: 0.35rem 0 0.6rem;
+	font-size: 1.45rem;
+	line-height: 1.25;
+}
+
+.projects-intro-banner p {
+	margin: 0;
+	max-width: 52rem;
+	line-height: 1.55;
+	color: #dbeafe;
+}
+
+/* Footer */
+.site-footer {
+	border-top: 1px solid rgba(15, 23, 42, 0.12);
+	background: var(--panel);
+	margin-top: auto;
+	position: sticky;
+	bottom: 0;
+	z-index: 10;
+}
+
+.site-footer-inner {
+	max-width: 64rem;
+	margin: 0 auto;
+	padding: 1.25rem 1rem 1.5rem;
+	color: var(--muted);
+	font-size: 0.92rem;
+	line-height: 1.5;
+}
+
+.site-footer-inner p {
+	margin: 0.25rem 0;
+}
+
+.site-footer a {
+	color: var(--accent);
+	text-decoration: none;
+}
+
+.site-footer a:hover {
+	text-decoration: underline;
+}
+
+/* Contact */
+.contact-page {
+	max-width: 52rem;
+}
+
+.contact-card {
+	background: var(--panel);
+	border: 1px solid rgba(15, 23, 42, 0.1);
+	border-radius: 0.75rem;
+	padding: 1rem 1.1rem;
+	line-height: 1.6;
+}
+
+.contact-card a {
+	color: var(--accent);
+	text-decoration: none;
+}
+
+.contact-card a:hover {
+	text-decoration: underline;
+}
+
+/* Services */
+.services-page {
+	display: grid;
+	gap: 1rem;
+}
+
+.services-intro {
+	line-height: 1.7;
+	font-size: 1rem;
+	margin: 0;
+}
+
+.services-block {
+	background: var(--panel);
+	border: 1px solid rgba(15, 23, 42, 0.1);
+	border-radius: 0.75rem;
+	padding: 1rem 1.1rem;
+}
+
+.services-block h3 {
+	margin: 0 0 0.65rem;
+	font-size: 1.1rem;
+}
+
+.services-block p {
+	margin: 0;
+	line-height: 1.65;
+}
+
+.services-block ul,
+.services-block ol {
+	margin: 0;
+	padding-left: 1.2rem;
+	display: grid;
+	gap: 0.35rem;
+	line-height: 1.55;
+}
+
+.price-table-wrap {
+	overflow-x: auto;
+}
+
+.price-table {
+	width: 100%;
+	border-collapse: collapse;
+	font-size: 0.92rem;
+}
+
+.price-table th,
+.price-table td {
+	border: 1px solid rgba(15, 23, 42, 0.12);
+	padding: 0.55rem;
+	text-align: left;
+	vertical-align: top;
+}
+
+.price-table th {
+	background: rgba(37, 99, 235, 0.09);
+	font-weight: 700;
+}
+
+.services-note {
+	margin-top: 0.7rem !important;
+	font-size: 0.9rem;
+	color: var(--muted);
 }
 
 .project-band {
-	background: var(--row-bg);
+	background: linear-gradient(135deg, var(--row-bg) 0%, var(--row-bg-end) 100%);
 	border-top: 1px solid rgba(15, 23, 42, 0.08);
 	border-bottom: 1px solid rgba(15, 23, 42, 0.08);
 	width: 100vw;

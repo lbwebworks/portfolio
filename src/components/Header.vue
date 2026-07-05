@@ -4,7 +4,7 @@
       <div class="site-brand">Portfolio</div>
       <div class="flex items-center">
         <nav class="nav-links nav-tabs">
-          <router-link to="/">Home</router-link>
+          <router-link to="/home">Home</router-link>
           <router-link to="/projects">Projects</router-link>
           <router-link to="/services">Services</router-link>
           <router-link to="/contact">Contact</router-link>

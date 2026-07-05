@@ -27,7 +27,7 @@
 </template>
 
 <script setup lang="ts">
-import { reactive, ref } from 'vue'
+import { onMounted, reactive, ref } from 'vue'
 
 const FORM_ENDPOINT = 'https://formspree.io/f/your-form-id'
 
